@@ -10,6 +10,7 @@ public:
                 vowels.push_back(s[i]);
             }
         }
+        if(vowels.size()==0) return s;
         sort(vowels.begin(),vowels.end());
         for(int j=0; j<index.size(); j++){
             s[index[j]]=vowels[j];
