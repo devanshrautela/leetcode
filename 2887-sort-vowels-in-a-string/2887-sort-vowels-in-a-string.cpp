@@ -9,11 +9,10 @@ public:
         for(int i=0; i<s.length(); i++){
             if (isVowel(s[i]))  vowels.push_back(s[i]);
         }
-        if(vowels.size()==0) return s;
         sort(vowels.begin(),vowels.end());
         int index=0;
-        for(int j=0; j<s.length(); j++){
-            if(isVowel(s[j])) s[j]=vowels[index++]; 
+        for(int i=0; i<s.length(); i++){
+            if(isVowel(s[i])) s[i]=vowels[index++]; 
         }
         return s;
     }
