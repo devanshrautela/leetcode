@@ -1,19 +1,19 @@
 class Solution {
 public:
+    bool isVowel(char ch){
+        ch = toupper(ch);
+        return (ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U');
+    }
     string sortVowels(string s) {
-        vector<int>index;
         vector<char>vowels;
         for(int i=0; i<s.length(); i++){
-            char c = tolower(s[i]);
-            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
-                index.push_back(i);
-                vowels.push_back(s[i]);
-            }
+            if (isVowel(s[i]))  vowels.push_back(s[i]);
         }
         if(vowels.size()==0) return s;
         sort(vowels.begin(),vowels.end());
-        for(int j=0; j<index.size(); j++){
-            s[index[j]]=vowels[j];
+        int index=0;
+        for(int j=0; j<s.length(); j++){
+            if(isVowel(s[j])) s[j]=vowels[index++]; 
         }
         return s;
     }
