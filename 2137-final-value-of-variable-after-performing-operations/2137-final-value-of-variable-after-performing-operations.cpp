@@ -3,12 +3,9 @@ public:
     int finalValueAfterOperations(vector<string>& operations) {
         int x=0;
         int n=operations.size();
-        while(n--)
-        {
-            if(operations[n]=="--X") --x;
-            else if(operations[n]=="X--")x--;
-            else if(operations[n]=="X++")x++;
-            else if(operations[n]=="++X")++x;
+        for(int i=0; i<n; i++){
+            if(operations[i][1]=='-') x--;
+            else x++;
         }
         return x;
     }
