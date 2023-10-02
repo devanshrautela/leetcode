@@ -6,7 +6,7 @@ public:
         long low=1;
         long ans=0;
         while(low<=high){
-            long long mid=(high+low)/2;
+            long long mid=low+(high-low)/2;
             if((mid*mid)<=x){
                 ans=mid;
                 low=mid+1;
