@@ -10,7 +10,6 @@ class Solution {
             }
         }
         StringBuilder sb = new StringBuilder();
-        System.out.println(st);
         for(char ch:st){
             sb.append(ch);
         }
