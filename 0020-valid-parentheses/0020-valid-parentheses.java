@@ -4,15 +4,19 @@ class Solution {
         for(char i : s.toCharArray()){
             if(i=='(' || i=='{' || i=='['){
                 stack.push(i);
+                continue;
             }
-            else if(!stack.empty()){
-                if(i==')' && stack.peek()=='(' || i==']' && stack.peek()=='[' || i=='}' && stack.peek()=='{'){
-                stack.pop();
+            else if(stack.isEmpty() || !isMatching(i, stack.peek())){
+                return false;
             }
-            else return false;
-            }
-            else return false;
+            stack.pop();
         }
         return stack.isEmpty();
+    }
+    public boolean isMatching(char i, char top){
+        if(i=='}' && top=='{') return true;
+        else if(i==']' && top=='[') return true;
+        else if(i==')' && top=='(') return true;
+        else return false;
     }
 }
