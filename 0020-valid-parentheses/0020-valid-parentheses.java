@@ -14,9 +14,6 @@ class Solution {
         return stack.isEmpty();
     }
     public boolean isMatching(char i, char top){
-        if(i=='}' && top=='{') return true;
-        else if(i==']' && top=='[') return true;
-        else if(i==')' && top=='(') return true;
-        else return false;
+        return (i=='}' && top=='{') || (i==']' && top=='[') || (i==')' && top=='(');
     }
 }
